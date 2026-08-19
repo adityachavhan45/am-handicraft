@@ -38,7 +38,8 @@ export default function CheckoutPage() {
       city: form.city || "Demo City",
       delivery,
     });
-    router.push("/order-success");
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    router.push("/order-success", { scroll: true });
   };
 
   return (

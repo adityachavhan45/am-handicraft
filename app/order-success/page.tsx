@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
 import { CheckCircle2 } from "lucide-react";
 import { formatPrice } from "@/lib/products";
 import { useStore } from "@/lib/store-context";
@@ -9,6 +10,10 @@ export default function OrderSuccessPage() {
   const { demoOrder } = useStore();
   const deliveryDate = new Date();
   deliveryDate.setDate(deliveryDate.getDate() + 5);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
 
   return (
     <div className="bg-[#fbf7ef] pt-32">
